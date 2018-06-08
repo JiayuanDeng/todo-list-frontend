@@ -1,0 +1,5 @@
+export const VISIBILITY_FILTERS = {
+  SHOW_ALL: {VALUE: 'SHOW_ALL', TEXT: 'All'},
+  SHOW_ACTIVE: {VALUE: 'SHOW_ACTIVE', TEXT: 'Active'},
+  SHOW_COMPLETED: {VALUE: 'SHOW_COMPLETED', TEXT: 'Completed'}
+};
