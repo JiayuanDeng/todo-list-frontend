@@ -1,5 +1,5 @@
 import * as actionTypes from '../constants/actionTypes';
-import api from "../util/api";
+import api from "./api";
 
 const registerRequest = (auth) => {
   return {
@@ -22,7 +22,7 @@ const registerFailure = (message) => {
 };
 export const register = auth => dispatch => {
   dispatch(registerRequest(auth));
-  api.register(auth)
+  return api.register(auth)
     .then(data => {
       if (data.credential) {
         dispatch(registerSuccess(data.credential));
@@ -31,6 +31,41 @@ export const register = auth => dispatch => {
       }
       else {
         dispatch(registerFailure(data.message));
+        console.log('An error eccured: ' + data.message);
+      }
+    });
+};
+
+const loginRequest = (auth) => {
+  return {
+    type: actionTypes.LOGIN_REQUEST,
+    payload: auth
+  }
+};
+const loginSuccess = (credential) => {
+  return {
+    type: actionTypes.LOGIN_SUCCESS,
+    payload: credential
+  };
+};
+const loginFailure = (message) => {
+  return {
+    type: actionTypes.LOGIN_FAILURE,
+    payload: message,
+    error: true
+  }
+};
+export const login = auth => dispatch => {
+  dispatch(loginRequest(auth));
+  return api.login(auth)
+    .then(data => {
+      if (data.credential) {
+        dispatch(loginSuccess(data.credential));
+        sessionStorage.setItem('access_token', data.credential.access_token);
+        console.log('Register successful and logged in!');
+      }
+      else {
+        dispatch(loginFailure(data.message));
         console.log('An error eccured: ' + data.message);
       }
     });

@@ -5,13 +5,13 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { register } from "../actions/userActions";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      login: {
+      auth: {
         email: '',
         password: ''
       },
@@ -20,12 +20,13 @@ class Register extends Component {
 
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
+    this.handleRegister = this.handleRegister.bind(this);
   }
 
   handleChangeEmail(event) {
     this.setState({
-      login: {
-        ...this.state.login,
+      auth: {
+        ...this.state.auth,
         email: event.target.value
       },
       errorMessage: ''
@@ -34,27 +35,17 @@ class Register extends Component {
 
   handleChangePassword(event) {
     this.setState({
-      login: {
-        ...this.state.login,
+      auth: {
+        ...this.state.auth,
         password: event.target.value
       },
       errorMessage: ''
     });
   }
-/*
-  handleRegister(event) {
-    event.preventDefault();
-    api.register(this.state.login)
-      .then(data => {
-        if (data.credential) {
-          sessionStorage.setItem('access_token', data.credential.access_token);
-          console.log('Register successful and logged in!');
-        }
-        if (data.message === 'User Already Exists') {
-          this.setState({errorMessage: 'User already exists.'});
-        }
-      });
-  }*/
+
+  handleRegister() {
+    this.props.onRegisterClick(this.state.auth)
+  }
 
   render() {
     return (
@@ -77,7 +68,7 @@ class Register extends Component {
           </Grid>
           <Grid item xs={12}>
             <Button
-              onClick={this.props.onRegisterClick}
+              onClick={this.handleRegister}
               variant='raised'
               color='primary'
               fullWidth>
@@ -91,7 +82,7 @@ class Register extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  onRegisterClick: (auth) => dispatch(register(auth))
+  onRegisterClick: auth => dispatch(register(auth))
 });
 
 export default connect(null, mapDispatchToProps)(Register);

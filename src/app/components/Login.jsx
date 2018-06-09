@@ -4,13 +4,14 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import api from '../util/api';
+import { login } from "../actions/userActions";
+import { connect } from "react-redux";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      login: {
+      auth: {
         email: '',
         password: ''
       },
@@ -24,8 +25,8 @@ class Login extends Component {
 
   handleChangeEmail(event) {
     this.setState({
-      login: {
-        ...this.state.login,
+      auth: {
+        ...this.state.auth,
         email: event.target.value
       },
       errorMessage: ''
@@ -34,14 +35,18 @@ class Login extends Component {
 
   handleChangePassword(event) {
     this.setState({
-      login: {
-        ...this.state.login,
+      auth: {
+        ...this.state.auth,
         password: event.target.value
       },
       errorMessage: ''
     });
   }
 
+  handleLogin() {
+    this.props.onLoginClick(this.state.auth)
+  }
+/*
   handleLogin(event) {
     event.preventDefault();
     api.login(this.state.login)
@@ -54,7 +59,7 @@ class Login extends Component {
           this.setState({errorMessage: 'Wrong email or password.'});
         }
       });
-  }
+  }*/
 
   render() {
     return (
@@ -103,4 +108,8 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  onLoginClick: auth => dispatch(login(auth))
+});
+
+export default connect(null, mapDispatchToProps)(Login);
