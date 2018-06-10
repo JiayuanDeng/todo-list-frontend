@@ -1,19 +1,19 @@
 import * as actionTypes from '../constants/actionTypes';
 import api from "./api";
 
-const registerRequest = (auth) => {
+const registerRequest = auth => {
   return {
     type: actionTypes.REGISTER_REQUEST,
     payload: auth
   }
 };
-const registerSuccess = (credential) => {
+const registerSuccess = credential => {
   return {
     type: actionTypes.REGISTER_SUCCESS,
     payload: credential
   };
 };
-const registerFailure = (message) => {
+const registerFailure = message => {
   return {
     type: actionTypes.REGISTER_FAILURE,
     payload: message,
@@ -36,19 +36,19 @@ export const register = auth => dispatch => {
     });
 };
 
-const loginRequest = (auth) => {
+const loginRequest = auth => {
   return {
     type: actionTypes.LOGIN_REQUEST,
     payload: auth
   }
 };
-const loginSuccess = (credential) => {
+const loginSuccess = credential => {
   return {
     type: actionTypes.LOGIN_SUCCESS,
     payload: credential
   };
 };
-const loginFailure = (message) => {
+const loginFailure = message => {
   return {
     type: actionTypes.LOGIN_FAILURE,
     payload: message,
