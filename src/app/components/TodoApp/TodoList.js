@@ -7,15 +7,17 @@ import List from '@material-ui/core/List';
 class TodoList extends Component {
   render() {
     return (
-      <List>
-        {this.props.todos.map(todo =>
-          <Todo
-            key={todo.id}
-            {...todo}
-            onClick={() => this.props.onTodoClick(todo.id)}
-          />
-        )}
-      </List>
+      <div style={{width: 320, overflow: 'auto'}}>
+        <List>
+          {this.props.todos.map(todo =>
+            <Todo
+              key={todo.id}
+              {...todo}
+              onClick={() => this.props.onTodoClick(todo.id)}
+            />
+          )}
+        </List>
+      </div>
     );
   }
 }

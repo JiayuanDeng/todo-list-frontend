@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Checkbox from '@material-ui/core/Checkbox';
 
 class Todo extends Component {
-  render () {
+  render() {
     return (
       <ListItem
         button
-        onClick={this.props.onClick}
       >
-        <Checkbox
-          checked={this.props.completed}
-          disableRipple
-        />
-        <ListItemText primary={this.props.text} />
+        <ListItemSecondaryAction>
+          <Checkbox
+            onChange={this.props.onClick}
+            checked={this.props.completed}
+            disableRipple
+          />
+        </ListItemSecondaryAction>
+        <ListItemText primary={this.props.text}/>
       </ListItem>
     );
   }

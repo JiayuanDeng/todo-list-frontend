@@ -32,31 +32,35 @@ class AddTodo extends Component {
   }
 
   handleChange = event => {
-    this.setState({ input: event.target.value });
+    this.setState({input: event.target.value});
   };
 
   render() {
-    const { classes } = this.props;
+    const {classes} = this.props;
     return (
-      <div>
-        <FormControl className={classes.form}>
-          <InputLabel>New Todo</InputLabel>
-          <Input value={this.state.input} onChange={this.handleChange}/>
-        </FormControl>
-        <Button
-          className={classes.button}
-          variant='raised'
-          color='primary'
-          onClick={() => {
-            this.props.onAddTodoClick(this.state.nextTodoId, this.state.input);
-            this.setState({
-              nextTodoId: this.state.nextTodoId + 1,
-              input: ''
-            });
-          }}
-        >
-          Add Todo
-        </Button>
+      <div style={{display: 'flex', alignItems: 'center'}}>
+        <div style={{flex: 1}}>
+          <FormControl className={classes.form}>
+            <InputLabel>New Todo</InputLabel>
+            <Input value={this.state.input} onChange={this.handleChange}/>
+          </FormControl>
+        </div>
+        <div style={{flex: 0, height: 64}}>
+          <Button
+            className={classes.button}
+            variant='raised'
+            color='primary'
+            onClick={() => {
+              this.props.onAddTodoClick(this.state.nextTodoId, this.state.input);
+              this.setState({
+                nextTodoId: this.state.nextTodoId + 1,
+                input: ''
+              });
+            }}
+          >
+            Add Todo
+          </Button>
+        </div>
       </div>
     );
   }
