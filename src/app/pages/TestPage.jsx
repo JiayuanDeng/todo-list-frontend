@@ -21,13 +21,10 @@ class TestPage extends Component {
       <div>
         <Navigation/>
         <Grid
-          horizontal container
-          width={'100vw'}
-          height={96}
-          padding={24}
-          color='#F8F8F8'
-          border='1px solid #CCCCCC'>
-          <Grid item vertical container alignLeft>
+          hContainer
+          width='100vw' height={96} padding={24}
+          color='#F8F8F8' borderWidth='0 0 1px 0' borderColor='#CCCCCC' borderStyle='solid'>
+          <Grid item container alignLeft width={320}>
             <Typography variant='title'>Todo App</Typography>
             <Typography variant='body2'>Welcome to todo list app!</Typography>
           </Grid>
@@ -39,12 +36,16 @@ class TestPage extends Component {
           </Grid>
           <Grid item grow/>
         </Grid>
-        <Grid horizontal container alignLeft>
-          <Grid item overflow container
-                width={320}
-                height={'calc()'}
-                border='1px solid #CCCCCC'>
+        <Grid hContainer alignLeft>
+          <Grid item fixedSize
+                container alignUp
+                width={320} height='calc(100vh - 160px)' overflow>
             <TodoList/>
+          </Grid>
+          <Grid item container alignUp
+                width='100%' height='calc(100vh - 160px)'
+                borderWidth='0 0 0 1px' borderColor='#CCCCCC' borderStyle='solid'>
+            Main
           </Grid>
         </Grid>
       </div>
