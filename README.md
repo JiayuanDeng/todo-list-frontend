@@ -1,3 +1,3 @@
-# Todo List Backend
+# Todo List Frontend
 
-This is a RESTful style api server for todo list app.
+This is a todo list app based on React, Redux and Material UI.
