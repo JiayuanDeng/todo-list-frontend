@@ -46,20 +46,6 @@ class Login extends Component {
   handleLogin() {
     this.props.onLoginClick(this.state.auth)
   }
-/*
-  handleLogin(event) {
-    event.preventDefault();
-    api.login(this.state.login)
-      .then(data => {
-        if (data.credential) {
-          sessionStorage.setItem('access_token', data.credential.access_token);
-          console.log('Logged in!');
-        }
-        if (data.message === 'Bad Credential') {
-          this.setState({errorMessage: 'Wrong email or password.'});
-        }
-      });
-  }*/
 
   render() {
     return (

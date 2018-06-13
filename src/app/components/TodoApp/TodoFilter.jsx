@@ -68,11 +68,9 @@ class TodoFilter extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => ({
     visibilityFilter: state.visibilityFilter
-  }
-};
+});
 
 const mapDispatchToProps = (dispatch) => ({
     onFilterLinkClick: (filter) => dispatch(setVisibilitFilter(filter))

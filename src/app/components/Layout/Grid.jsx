@@ -6,7 +6,7 @@ class Grid extends Component {
     if(this.props.width) style.width = this.props.width;
     if(this.props.height) style.height = this.props.height;
     if(this.props.padding) style.padding = this.props.padding;
-    if(this.props.color) style.backgroundColor = this.props.color;
+    if(this.props.backgroundColor) style.backgroundColor = this.props.backgroundColor;
     if(this.props.border) style.border = this.props.border;
     if(this.props.borderColor) style.borderColor = this.props.borderColor;
     if(this.props.borderWidth) style.borderWidth = this.props.borderWidth;

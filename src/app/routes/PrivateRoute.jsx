@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from "react-router-dom";
+import {connect} from "react-redux";
+import LoginPage from '../pages/LoginPage'
+
 
 class PrivateRoute extends Component {
   render() {
@@ -8,20 +11,15 @@ class PrivateRoute extends Component {
       <Route
         {...rest}
         render={props =>
-          sessionStorage.getItem('access_token') ? (
-            <Component {...props} />
-          ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: {from: props.location}
-              }}
-            />
-          )
+          this.props.loggedIn ? (<Component {...props} />) : (<LoginPage/>)
         }
       />
     );
   }
 }
 
-export default PrivateRoute;
+const mapStateToProps = state => ({
+  loggedIn: state.user.loggedIn
+});
+
+export default connect(mapStateToProps, null)(PrivateRoute);

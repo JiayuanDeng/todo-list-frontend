@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   menuButton: {
@@ -26,11 +27,11 @@ class Navigation extends Component {
           <IconButton className={classes.menuButton} style={{width: 100}} color="inherit" aria-label="Menu">
             <MenuIcon/>
           </IconButton>
-          <Button href='/' color="inherit">Home</Button>
-          <Button href='/todolist' color="inherit">Todo App</Button>
-          <Button href='/test' color="inherit">Test</Button>
+          <Button to='/' component={Link} color='inherit'>Home</Button>
+          <Button to='/todolist' component={Link} color="inherit">Todo App</Button>
+          <Button to='/test' component={Link} color="inherit">Test</Button>
           <Typography variant="title" color="inherit" className={classes.flexGrow}></Typography>
-          <Button href='/login' color="inherit">Login</Button>
+          <Button to='/login' component={Link} color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     );

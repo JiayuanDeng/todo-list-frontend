@@ -62,7 +62,7 @@ export const login = auth => dispatch => {
       if (data.credential) {
         dispatch(loginSuccess(data.credential));
         sessionStorage.setItem('access_token', data.credential.access_token);
-        console.log('Register successful and logged in!');
+        console.log('Logged in!');
       }
       else {
         dispatch(loginFailure(data.message));

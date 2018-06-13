@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Background from '../components/Background';
+import Grid from '../components/Layout/Grid'
 import Navigation from '../components/Navigation';
 import Login from '../components/Login';
 
@@ -8,9 +8,9 @@ class LoginPage extends Component {
     return (
       <div>
         <Navigation/>
-        <Background>
-          <Login />
-        </Background>
+        <Grid container height='calc(100vh - 64px)' backgroundColor='#F8F8F8'>
+          <Login/>
+        </Grid>
       </div>
     );
   }

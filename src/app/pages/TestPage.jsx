@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import Background from '../components/Background';
 import Navigation from '../components/Navigation';
-import Header from '../components/Header';
 
 import AddTodo from '../components/TodoApp/AddTodo';
 import TodoFilter from '../components/TodoApp/TodoFilter';
@@ -23,7 +21,7 @@ class TestPage extends Component {
         <Grid
           hContainer
           width='100vw' height={96} padding={24}
-          color='#F8F8F8' borderWidth='0 0 1px 0' borderColor='#CCCCCC' borderStyle='solid'>
+          backgroundColor='#F8F8F8' borderWidth='0 0 1px 0' borderColor='#CCCCCC' borderStyle='solid'>
           <Grid item container alignLeft width={320}>
             <Typography variant='title'>Todo App</Typography>
             <Typography variant='body2'>Welcome to todo list app!</Typography>
@@ -42,10 +40,11 @@ class TestPage extends Component {
                 width={320} height='calc(100vh - 160px)' overflow>
             <TodoList/>
           </Grid>
-          <Grid item container alignUp
+          <Grid item
+                container alignUp
                 width='100%' height='calc(100vh - 160px)'
                 borderWidth='0 0 0 1px' borderColor='#CCCCCC' borderStyle='solid'>
-            Main
+
           </Grid>
         </Grid>
       </div>

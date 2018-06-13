@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export default (user = { isFetching: false, login: false }, action) => {
+export default (user = { isFetching: false, loggedIn: false }, action) => {
   switch (action.type) {
     case actionTypes.REGISTER_REQUEST:
       return {
@@ -16,7 +16,7 @@ export default (user = { isFetching: false, login: false }, action) => {
       return {
         ...user,
         isFetching: false,
-        login: true,
+        loggedIn: true,
         expire: action.payload.expire
       };
     case actionTypes.LOGIN_REQUEST:
@@ -33,8 +33,13 @@ export default (user = { isFetching: false, login: false }, action) => {
       return {
         ...user,
         isFetching: false,
-        login: true,
+        loggedIn: true,
         expire: action.payload.expire
+      };
+    case actionTypes.LOGOUT:
+      return {
+        ...user,
+        loggedIn: false
       };
     default:
       return user;
