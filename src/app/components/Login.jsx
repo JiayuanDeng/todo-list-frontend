@@ -57,6 +57,7 @@ class Login extends Component {
             <TextField
               onChange={this.handleChangeEmail}
               label='Email'
+              defaultValue='admin@carydeng.com'
               placeholder='user@example.com'
               margin='dense'
               fullWidth
@@ -65,6 +66,7 @@ class Login extends Component {
             <TextField
               onChange={this.handleChangePassword}
               label='Password'
+              defaultValue='password'
               margin='dense'
               fullWidth
             />

@@ -23,22 +23,29 @@ import TestPage from '../pages/TestPage';
 // ));
 //
 
-
+import Auth from '../components/Auth';
 
 class Router extends Component {
   render() {
     return (
       <BrowserRouter>
         <div>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/register" component={RegisterPage} />
-          <Route path="/login" component={LoginPage} />
-          <PrivateRoute path="/todolist" component={TodoListPage} />
-          <Route path="/test" component={TestPage} />
+          <div>
+            <Route exact path="/" component={HomePage} />
+          </div>
+          <div>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/register" component={RegisterPage} />
+            <Route path="/login" component={LoginPage} />
+            <PrivateRoute path="/todolist" component={TodoListPage} />
+            <Route path="/test" component={TestPage} />
+          </div>
         </div>
       </BrowserRouter>
     );
   }
 }
+
+//
 
 export default Router;
