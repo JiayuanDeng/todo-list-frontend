@@ -70,3 +70,10 @@ export const login = auth => dispatch => {
       }
     });
 };
+
+export const logout = () => {
+  sessionStorage.removeItem('access_token');
+  return {
+    type: actionTypes.LOGOUT
+  };
+};
