@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import Navigation from '../components/Navigation';
-
 import AddTodo from '../components/TodoApp/AddTodo';
 import TodoFilter from '../components/TodoApp/TodoFilter';
 import TodoList from '../components/TodoApp/TodoList';
@@ -17,7 +15,6 @@ class TestPage extends Component {
   render() {
     return (
       <div>
-        <Navigation/>
         <Grid
           hContainer
           width='100vw' height={96} padding={24}

@@ -7,13 +7,16 @@ import Typography from '@material-ui/core/Typography';
 import { login } from "../actions/userActions";
 import { connect } from "react-redux";
 
+const DEFAULT_EMAIL = 'admin@carydeng.com';
+const DEFAULT_PASSWORD = 'password';
+
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       auth: {
-        email: '',
-        password: ''
+        email: DEFAULT_EMAIL,
+        password: DEFAULT_PASSWORD
       },
       errorMessage: ''
     };
@@ -57,7 +60,7 @@ class Login extends Component {
             <TextField
               onChange={this.handleChangeEmail}
               label='Email'
-              defaultValue='admin@carydeng.com'
+              defaultValue={DEFAULT_EMAIL}
               placeholder='user@example.com'
               margin='dense'
               fullWidth
@@ -66,7 +69,7 @@ class Login extends Component {
             <TextField
               onChange={this.handleChangePassword}
               label='Password'
-              defaultValue='password'
+              defaultValue={DEFAULT_PASSWORD}
               margin='dense'
               fullWidth
             />

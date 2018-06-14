@@ -18,7 +18,7 @@ const styles = theme => ({
   },
 });
 
-class Navigation extends Component {
+class Nav extends Component {
   render() {
     const { classes } = this.props;
     return (
@@ -38,4 +38,4 @@ class Navigation extends Component {
   }
 }
 
-export default withStyles(styles)(Navigation);
+export default withStyles(styles)(Nav);

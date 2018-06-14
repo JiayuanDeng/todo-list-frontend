@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, /*Redirect*/ } from "react-router-dom";
 import PrivateRoute from './PrivateRoute';
-// import {connect} from "react-redux";
+import Nav from '../components/Nav';
 
 // Components
 import HomePage from '../pages/HomePage';
@@ -9,21 +9,6 @@ import RegisterPage from '../pages/RegisterPage';
 import LoginPage from '../pages/LoginPage';
 import TodoListPage from '../pages/TodoListPage';
 import TestPage from '../pages/TestPage';
-//
-// const mapStateToProps = state => ({
-//   loggedIn: state.user.loggedIn
-// });
-// const PrivateRoute = connect(mapStateToProps)(({ component: Component, ...rest }) => (
-//   <Route
-//     {...rest}
-//     render={props =>
-//       props.loggedIn ? (<Component {...props} />) : (<Redirect to={{pathname: '/login', state: { from: props.location }}}/>)
-//     }
-//   />
-// ));
-//
-
-import Auth from '../components/Auth';
 
 class Router extends Component {
   render() {
@@ -31,7 +16,7 @@ class Router extends Component {
       <BrowserRouter>
         <div>
           <div>
-            <Route exact path="/" component={HomePage} />
+            <Nav/>
           </div>
           <div>
             <Route exact path="/" component={HomePage} />
