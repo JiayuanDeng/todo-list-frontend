@@ -13,7 +13,7 @@ class HomePage extends Component {
           <Typography variant='body2'>Welcome!</Typography>
         </Grid>
         <Grid container height='calc(100vh - 160px)'>
-          <h2>Welcome to todo list app!</h2>
+          <Typography variant='display3'>Welcome to todo list app!</Typography>
         </Grid>
       </div>
     );

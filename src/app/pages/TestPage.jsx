@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Typography from '@material-ui/core/Typography';
 
 import Grid from '../components/Layout/Grid';
 
@@ -8,7 +9,7 @@ class TestPage extends Component {
       <div>
         <Grid container
               width='100vw' height='calc(100vh - 64px)'>
-          Nothing is tested!
+          <Typography variant='display3'>Nothing is tested</Typography>
         </Grid>
       </div>
     );
