@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, /*Redirect*/ } from "react-router-dom";
 import PrivateRoute from './PrivateRoute';
-import Nav from '../components/Nav';
+import Nav from '../components/Nav/Nav';
 
 // Components
 import HomePage from '../pages/HomePage';

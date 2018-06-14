@@ -17,6 +17,7 @@ export default (user = { isFetching: false, loggedIn: false }, action) => {
         ...user,
         isFetching: false,
         loggedIn: true,
+        email: action.payload.email,
         expire: action.payload.expire
       };
     case actionTypes.LOGIN_REQUEST:
@@ -34,6 +35,7 @@ export default (user = { isFetching: false, loggedIn: false }, action) => {
         ...user,
         isFetching: false,
         loggedIn: true,
+        email: action.payload.email,
         expire: action.payload.expire
       };
     case actionTypes.LOGOUT:

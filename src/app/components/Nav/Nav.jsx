@@ -8,6 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
+import LoginStatus from './LoginStatus';
+
 const styles = theme => ({
   menuButton: {
     marginLeft: -12,
@@ -31,7 +33,7 @@ class Nav extends Component {
           <Button to='/todolist' component={Link} color="inherit">Todo App</Button>
           <Button to='/test' component={Link} color="inherit">Test</Button>
           <Typography variant="title" color="inherit" className={classes.flexGrow}> </Typography>
-          <Button to='/login' component={Link} color="inherit">Login</Button>
+          <LoginStatus/>
         </Toolbar>
       </AppBar>
     );
