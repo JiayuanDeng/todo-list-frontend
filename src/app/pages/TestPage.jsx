@@ -44,7 +44,6 @@ class TestPage extends Component {
                 container alignUp
                 width='100%' height='calc(100vh - 160px)'
                 borderWidth='0 0 0 1px' borderColor='#CCCCCC' borderStyle='solid'>
-
           </Grid>
         </Grid>
       </div>

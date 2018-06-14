@@ -24,13 +24,13 @@ class Navigation extends Component {
     return (
       <AppBar position="sticky">
         <Toolbar>
-          <IconButton className={classes.menuButton} style={{width: 100}} color="inherit" aria-label="Menu">
+          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon/>
           </IconButton>
           <Button to='/' component={Link} color='inherit'>Home</Button>
           <Button to='/todolist' component={Link} color="inherit">Todo App</Button>
           <Button to='/test' component={Link} color="inherit">Test</Button>
-          <Typography variant="title" color="inherit" className={classes.flexGrow}></Typography>
+          <Typography variant="title" color="inherit" className={classes.flexGrow}> </Typography>
           <Button to='/login' component={Link} color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
