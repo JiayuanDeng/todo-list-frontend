@@ -3,7 +3,6 @@ import { Route, withRouter } from "react-router-dom";
 import {connect} from "react-redux";
 import LoginPage from '../pages/LoginPage'
 
-
 class PrivateRoute extends Component {
   render() {
     var {component: Component, loggedIn, ...rest} = this.props;

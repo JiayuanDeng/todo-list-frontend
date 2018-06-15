@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, /*Redirect*/ } from "react-router-dom";
 import PrivateRoute from './PrivateRoute';
-import Nav from '../components/Nav/Nav';
+import Nav from './Navigation/Navigation';
 
 // Components
 import HomePage from '../pages/HomePage';
@@ -10,20 +10,18 @@ import LoginPage from '../pages/LoginPage';
 import TodoListPage from '../pages/TodoListPage';
 import TestPage from '../pages/TestPage';
 
-class Router extends Component {
+class Root extends Component {
   render() {
     return (
       <BrowserRouter>
         <div>
+          <Nav/>
           <div>
-            <Nav/>
-          </div>
-          <div>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/register" component={RegisterPage} />
-            <Route path="/login" component={LoginPage} />
-            <PrivateRoute path="/todolist" component={TodoListPage} />
-            <Route path="/test" component={TestPage} />
+            <Route exact path="/" component={HomePage}/>
+            <Route path="/register" component={RegisterPage}/>
+            <Route path="/login" component={LoginPage}/>
+            <PrivateRoute path="/todolist" component={TodoListPage}/>
+            <Route path="/test" component={TestPage}/>
           </div>
         </div>
       </BrowserRouter>
@@ -33,4 +31,4 @@ class Router extends Component {
 
 //
 
-export default Router;
+export default Root;
